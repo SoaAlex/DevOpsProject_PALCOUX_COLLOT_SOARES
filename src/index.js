@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json())
 app.use(express.json())
 
-app.get('/', (req, res) => res.send('Hello World! DevOps project of Paul, Alexandre and Hector'))
+app.get('/', (req, res) => res.send('Hello World! DevOps project of Paul, Alexandre and Hector. ECE Paris'))
 
 app.use('/users', userRouter)
 
