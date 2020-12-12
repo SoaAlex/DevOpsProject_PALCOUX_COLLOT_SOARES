@@ -9,3 +9,12 @@ script:
 - npm install
 - echo 'Testing'
 - npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: jaqzqcTAzhI2e7uzXuD2qjkAFOs2oMVlyrwCBXpQweimgnnjkJC1BW4mP5lm3sbuqEKpUYj4aqPoxkwDyGlk6243iu1Z0a4P14TiPZRY+xSt57LAFqAo4dVuPaZtweL+AoskST5i/aXOvfhJYjGEFs+S/PRXCjbkOuqpzkdZzwX+FgjDsIWjrQpyNrcTuOp2DCiTYpPAtFiLvWgOTr0RkxKUMhMtxPAq8yPczDpWcbvppOHORVp5szs/2qnyWuS7a1Y5OIvrjGqkucnp9eTy5l2SGAgdsj4aUeQQNEL/0Rx744imzcomjah3txn9bG4ia4su9oLFsdvX+pRMRBEHb0nfnYMaHWB7zkZgFPY7elAxkUAF9vRbfW1jsm72I5XZ6uOg5XdIhKIvpkJsK+TfAhrcZdZo1HeTz22aMlXrY21nlbSV1CIEXNAV7cJaO8UDjkipV9SfLq0BhaDVJUuAkN50PxWC6GKOwaeO2vjoAv15oztcAScJ924CT3iOhjOtDSBxRE9J2+W9hILkCzV5IN0hibVKS1EvaAJrotxAqsqnC66PKZVWYO4srkpvsKhosrffCvdJbCuIi7b7HpvKPEq8Y+KOZ7u20/Evk0dwsLARIG3KMy7kz5zDYjHUSCvqzBIPpcWskGTMMgfS7elTP/RLyabpLX8jFM9qJ3XupMU=
+  app: DevOpsProject_PALCOUX_COLLOT_SOARES
+  on:
+    repo: SoaAlex/DevOpsProject_PALCOUX_COLLOT_SOARES
+    branch: main
+  skip_cleanup: 'true'
