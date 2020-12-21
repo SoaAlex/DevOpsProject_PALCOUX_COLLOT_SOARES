@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+- '12'
+- '14'
+services:
+- mongodb
+script:
+- echo 'Starting'
+- npm install
+- echo 'Testing'
+- npm test
+deploy:
+  provider: heroku
+  api_key: 3d1f212b-de34-4362-a356-3e236900f0e4
+  app: projet-devops
+  on:
+    repo: SoaAlex/DevOpsProject_PALCOUX_COLLOT_SOARES
+    branch: main
+  skip_cleanup: 'true'
