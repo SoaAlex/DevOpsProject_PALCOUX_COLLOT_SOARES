@@ -1,20 +1,13 @@
 const { expect } = require('chai')
-let db
+let client
 
-describe('MongoDB', () => {
+describe('Redis', () => {
   
-  before(async() => {
-    const MongoClient = require('mongodb').MongoClient;
-    const url = 'mongodb://localhost:27017';
-    const dbName = 'Database';
-    var db
-    
-    client = await MongoClient.connect(url, { useUnifiedTopology: true },function(err, client) {
-      db = client.db(dbName);
-    });
+  before(() => {
+    client = require('../src/dbClient')
   })
   
-  it.skip('should connect to MongoDB', () => {
-    expect(db?true:false).to.eql(true)
+  it('should connect to Redis', () => {
+    expect(client.connected).to.eql(true)
   })
 })

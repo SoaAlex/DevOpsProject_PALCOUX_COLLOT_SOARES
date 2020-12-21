@@ -1,20 +1,28 @@
 const express = require('express')
 const userRouter = require('./routes/user')
 const bodyParser = require('body-parser')
+
 const app = express()
+const port = process.env.PORT || 3001
+
+const client = require('./dbClient')
+client.on("error", (err) => {
+  console.error(err)
+})
+
 app.use(bodyParser.urlencoded({
   extended: false
 }))
 app.use(bodyParser.json())
-app.use(express.json())
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
 app.use('/users', userRouter)
 
-/**Lauch server */
-const server = app.listen(8080, () => {
-    console.log("Server listening on port 8080")
+const server = app.listen(port, (err) => {
+  if (err) throw err
+  console.log("Server listening the port " + port)
 })
+
 
 module.exports = server
