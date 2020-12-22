@@ -20,10 +20,22 @@ ECE - DevOps project - SOARES Alexandre (Gr4) | COLLOT Paul (Gr2) | PALCOUX Hect
   little text about istio
 
 ## 2. Instructions
-
 ### Installation
-    npm init -y
-    npm start
+  1. Clone the repository
+
+    git clone https://github.com/SoaAlex/DevOpsProject_PALCOUX_COLLOT_SOARES/tree/main  
+  2. Install Vagrant
+  3. Install Virtual Box guest addition plugins for synchrozied folders
+
+  Note: we have been into trouble using any later version of the plugin than 0.21.0
+
+    vagrant plugin install vagrant-vbguest --plugin-version 0.21.0
+
+  4. From IaC directory, launch VM with Vagrant. Ansible will provide everything needed
+
+    vagrant up
+
+
 
 ### Usage
 
