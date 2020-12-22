@@ -11,7 +11,8 @@ ECE - DevOps project - SOARES Alexandre (Gr4) | COLLOT Paul (Gr2) | PALCOUX Hect
 ### Virtual environment using IaC approach 
   We use vagrant to configure a centOS virtual machine, along with Ansible for providing the installation of Kuberneties and Docker.
 ### Docker image
-  little text about our docker image
+  DockerFile permit to create an image of our webserver in a docker container, in this container, we need to install all of our dependencies and modules for npm.
+  But the web application need a redis server for start normally.
 ### Docker Compose
   little text about our docker compose
 ### Kubernetes
