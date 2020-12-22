@@ -4,7 +4,7 @@ let client
 describe('Redis', () => {
   
   before(() => {
-    client = require('../src/dbClient')
+    client = require('../src/redis-client')
   })
   
   it('should connect to Redis', () => {

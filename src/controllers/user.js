@@ -1,4 +1,4 @@
-const client = require('../dbClient')
+const client = require('../redis-client')
 
 module.exports = {
   create: (user, callback) => {

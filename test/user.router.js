@@ -1,4 +1,4 @@
-const app = require('../src/index')
+const app = require('../src/server')
 const chai = require('chai')
 const chaiHttp = require('chai-http')
 
@@ -9,7 +9,7 @@ let client
 describe('User REST API', () => {
 
   before(() => {
-    client = require('../src/dbClient')
+    client = require('../src/redis-client')
   })
   
   after(()=> {

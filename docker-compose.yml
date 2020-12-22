@@ -1,0 +1,21 @@
+redis-server:
+  image: redis
+  container_name: redis-server
+  expose:
+    - 6379
+node:  
+  container_name: nodejs-server
+  build: ./
+  volumes:
+    - ./:/var/www/app
+  links:
+    - redis-server
+  ports:
+    - 3001:3001
+  environment:
+    - REDIS_URL=redis://redis-server
+    - NODE_ENV=development
+    - PORT=3000
+  command:
+    sh -c 'npm i && node src/server.js'
+
