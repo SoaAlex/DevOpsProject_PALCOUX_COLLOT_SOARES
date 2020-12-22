@@ -6,9 +6,10 @@ ECE - DevOps project - SOARES Alexandre (Gr4) | COLLOT Paul (Gr2) | PALCOUX Hect
 ### Web application
   For the web application we used the application from the module 4
 ### CI/CD pipeline
-  We used travis pipeline for our project the link is below
+  We used travis pipeline for our project as a continuous integration support. The link is below
+  We used heroku as a continuous deployement service for our web application. Link is below again.
 ### Virtual environment using IaC approach 
-  With vagrant we used CentOS 
+  We use vagrant to configure a centOS virtual machine, along with Ansible for providing the installation of Kuberneties and Docker.
 ### Docker image
   little text about our docker image
 ### Docker Compose
