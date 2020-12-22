@@ -11,7 +11,7 @@ node:
   links:
     - redis-server
   ports:
-    - 3001:3001
+    - 3000:3000
   environment:
     - REDIS_URL=redis://redis-server
     - NODE_ENV=development
