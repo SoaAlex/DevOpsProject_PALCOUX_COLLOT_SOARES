@@ -6,9 +6,9 @@ ECE - DevOps project - SOARES Alexandre (Gr4) | COLLOT Paul (Gr2) | PALCOUX Hect
 ### Web application
   For the web application we used the application from the module 4
 ### CI/CD pipeline
-  We used GitLab CI/CD pipeline for our project
+  We used travis pipeline for our project the link is below
 ### Virtual environment using IaC approach 
-  little text about vagrant
+  With vagrant we used CentOS 
 ### Docker image
   little text about our docker image
 ### Docker Compose
@@ -21,15 +21,13 @@ ECE - DevOps project - SOARES Alexandre (Gr4) | COLLOT Paul (Gr2) | PALCOUX Hect
 ## 2. Instructions
 
 ### Installation
-
     npm init -y
-    npm test
     npm start
 
 ### Usage
 
 ### Testing
-
+    npm test
 
 ## 3. Links
 
