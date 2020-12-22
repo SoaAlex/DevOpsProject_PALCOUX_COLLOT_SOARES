@@ -23,5 +23,13 @@
     "eslint": "^7.9.0",
     "eslint-plugin-mocha": "^8.0.0",
     "mocha": "^7.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SoaAlex/DevOpsProject_PALCOUX_COLLOT_SOARES.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SoaAlex/DevOpsProject_PALCOUX_COLLOT_SOARES/issues"
+  },
+  "homepage": "https://github.com/SoaAlex/DevOpsProject_PALCOUX_COLLOT_SOARES#readme"
 }
