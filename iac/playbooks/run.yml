@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: yes
+  become_method: sudo
+  vars:
+    minikube_version: 1.12.1
+    kubectl_version: 1.18.6
+    docker_version: 19.03.11
+    helm_version: 3.2.4
+  # Roles to be executed on these hosts
+  roles:
+  - role: prerequisites
+    tags: prerequisites
+
+  - role: docker
+    tags: docker
+
+  - role: minikube
+    tags: minikube

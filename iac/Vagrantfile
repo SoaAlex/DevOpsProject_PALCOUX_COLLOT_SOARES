@@ -29,6 +29,8 @@ Vagrant.configure("2") do |config|
     host:  8443,
     auto_correct: true
 
+    config.vm.synced_folder "../k8s/", "/k8s"
+
     config.vm.define NODE_NAME do |master|     
 
         master.vm.box = IMAGE_NAME

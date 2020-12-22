@@ -44,3 +44,7 @@ ECE - DevOps project - SOARES Alexandre (Gr4) | COLLOT Paul (Gr2) | PALCOUX Hect
 COLLOT Paul
 SOARES Alexander
 PALCOUX Hector
+
+## 5. Sources
+[Kubernetes with redis](https://stackoverflow.com/questions/53031852/how-to-deploy-a-node-js-with-redis-on-kubernetes)
+[Ansible provisioning minikune with Vagrant](https://www.youtube.com/watch?v=xPLQqHbp9BM&feature=emb_title)

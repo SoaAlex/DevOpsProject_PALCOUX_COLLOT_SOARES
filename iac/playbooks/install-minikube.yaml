@@ -60,6 +60,13 @@
       yum:
         name: docker-ce-{{ docker_version }}
 
+    - name: Install docker-compose
+      remote_user: vagrant
+      get_url: 
+        url : https://github.com/docker/compose/releases/download/1.25.1-rc1/docker-compose-Linux-x86_64
+        dest: /usr/bin/docker-compose
+        mode: 'u+x,g+x'
+
     - name: start and enable docker service
       service:
         name: docker

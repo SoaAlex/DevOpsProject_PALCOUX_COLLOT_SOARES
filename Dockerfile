@@ -1,3 +1,7 @@
 FROM node:lts
-# Or whatever Node version/image you want
-WORKDIR '/var/www/app'
+ENV NODE_ENV=production
+COPY ["package.json", "package-lock.json*", "./"]
+RUN npm install --production
+COPY . .
+EXPOSE 3000
+CMD [ "npm", "start" ]

@@ -1,0 +1,25 @@
+---
+    - name: install system updates
+      yum: name=* state=latest update_cache=yes
+
+    - name: Disable SELinux
+      selinux:
+        state: disabled
+
+    - name: disable swap
+      shell: /usr/sbin/swapoff -a
+
+    - name: disable swap permanently
+      lineinfile:
+        path: /etc/fstab
+        regexp: '^[^#].*swap.*$'
+        state: absent
+
+    - name: delete swapfile
+      file:
+        path: /swapfile
+        state: absent
+
+    - name: install prerequisites
+      yum:
+        name: [ vim, socat, device-mapper-persistent-data, lvm2, telnet, tcpdump, conntrack-tools, bind-utils ]

@@ -1,0 +1,39 @@
+---
+- name: add docker repository
+  yum_repository:
+    name: docker-ce-stable
+    description: Docker CE Stable - $basearch
+    baseurl: https://download.docker.com/linux/centos/7/$basearch/stable
+    gpgcheck: yes
+    gpgkey: https://download.docker.com/linux/centos/gpg
+
+- name: install docker-ce version {{ docker_version }}
+  yum:
+    name: docker-ce-{{ docker_version }}
+
+- name: Install docker-compose
+  remote_user: vagrant
+  get_url: 
+    url : https://github.com/docker/compose/releases/download/1.25.1-rc1/docker-compose-Linux-x86_64
+    dest: /usr/bin/docker-compose
+    mode: 'u+x,g+x'
+
+- name: start and enable docker service
+  service:
+    name: docker
+    enabled: yes
+    state: started
+
+- name: Add vagrant user to docker group
+  user:
+    name: vagrant
+    groups: docker
+    append: yes
+
+- name: set bridge-nf-call-iptables = 1
+  lineinfile:
+    path: /etc/sysctl.conf
+    line: net.bridge.bridge-nf-call-iptables = 1
+
+- name: apply sysctl config
+  shell: sysctl -p
