@@ -85,9 +85,9 @@ describe('User REST API', () => {
         })
     })
 
-    it.skip('get users', (done) => {
+    it('get keys', (done) => {
       chai.request(app)
-        .get(`/users`)
+        .get(`/users/keys`)
         .send()
         .then((res) => {
           chai.expect(res).to.have.status(200);
@@ -100,9 +100,9 @@ describe('User REST API', () => {
         })
     })
 
-    it.skip('get a new user', (done) => {
+    it('get a new user', (done) => {
       chai.request(app)
-        .get(`/users/${new_user._id}`)
+        .get(`/users/${user.username}`)
         .send()
         .then((res) => {
           chai.expect(res).to.have.status(200)
@@ -114,12 +114,14 @@ describe('User REST API', () => {
         })
     })
     
-    it.skip('pass wrong parameters', (done) => {
+    it('pass wrong parameters', (done) => {
       chai.request(app)
-        .get(`/users/0000`)
+        .get(`/users/${user.email}`)
         .send()
         .then((res) => {
           chai.expect(res).to.have.status(404)
+          chai.expect(res.body.status).to.equal('no data')
+          chai.expect(res).to.be.json
           done()
         })
         .catch((err) => {
@@ -129,13 +131,13 @@ describe('User REST API', () => {
   })
   describe('DELETE /users', () => {
 
-    it.skip('delete users', (done) => {
+    it('delete users', (done) => {
       chai.request(app)
         .delete('/users')
         .send()
         .then((res) => {
           chai.expect(res).to.have.status(200)
-          chai.expect(res).to.be.json
+          chai.expect(res.body.status).to.be.equal('OK')
           done()
         })
         .catch((err) => {
@@ -143,16 +145,16 @@ describe('User REST API', () => {
         })
     })
     
-    it.skip('delete one user', (done) => {
+    it('delete one user', (done) => {
       const user = {
-        firstname: 'Sergei',
-        lastname: 'Kudinov'
+          username: 'sergkudinov',
       }
       chai.request(app)
-        .post('/users')
-        .send(user)
+        .delete(`/users/${user.username}`)
+        .send()
         .then((res) => {
-          chai.expect(res).to.have.status(400)
+          chai.expect(res).to.have.status(200)
+          chai.expect(res.body.status).to.be.equal('OK')
           done()
         })
         .catch((err) => {

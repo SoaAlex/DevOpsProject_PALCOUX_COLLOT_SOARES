@@ -56,15 +56,35 @@ describe("User controller REDIS DB", () => {
       });        
     });
 
-    it.skip("get all users", (done) => {
+    it("get all keys", (done) => {
       const username = "sergkudinov";
 
-      userController.getall((err, reply) => {
+      userController.getKeys((err, reply) => {
         expect(err).to.be.equal(null);
         expect(reply).to.not.be.equal(null);
-        expect(reply).to.be.a('object');
-        expect(reply).to.have.property('email');
-        expect(reply).to.have.property('password');
+        expect(reply).to.be.a('array');
+        expect(reply[0]).to.be.equal('sergkudinov');
+        done();
+      });        
+    });
+  });
+
+  describe("Delete", () => {
+    it("delete user by email", (done) => {
+      const username = "sergkudinov";
+
+      userController.delete(username, (err, reply) => {
+        expect(err).to.be.equal(null);
+        expect(reply).to.not.be.equal(null);
+        done();
+      });        
+    });
+
+    it("delete all", (done) => {
+      userController.deleteAll((err, reply) => {
+        expect(err).to.be.equal(null);
+        expect(reply).to.not.be.equal(null);
+        expect(reply).to.be.equal('OK');
         done();
       });        
     });

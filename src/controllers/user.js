@@ -30,23 +30,28 @@ module.exports = {
       callback(null, reply) // Return callback
     })
   },
-  getall: (callback) => {
-    //get key
-    let res = [];
-    client.get('*', (err, reply) => {
+  getKeys: (callback) => {
+    //get keys
+    client.keys('*', (err, reply) => {
       if (err) return callback(err, null)
-      console.log(reply)
-      if(reply){
-            async.map(keys, function(key, cb) {
-              console.log(key)
-               client.get(key, function (value) {
-                 console.log(value)
-                    res.push({key,value})
-                }); 
-            });
-        }
+      callback(null, reply)
     })
-    console.log(res)
-    callback(null,res)
+  },
+  delete: (username, callback) => {
+    //check params
+    if(!username)
+      return callback(new Error("Wrong user parameters"), null)
+    //delete
+    client.del(username, (err, reply) => {
+      if (err) return callback(err, null)
+      callback(null, reply) // Return callback
+    })
+  },
+  deleteAll: (callback) => {
+    //deleteAll
+    client.flushdb((err, reply) => {
+      if (err) return callback(err, null)
+      callback(null, reply) // Return callback
+    })
   },
 }
