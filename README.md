@@ -30,7 +30,18 @@ Our Docker Compose is just like the previous Dockerfile but it also pulls a redi
 Use the command : `docker-compose up`
 
 ### Kubernetes
-Kubernetes are installed inside our Virtual Machine. It provides container ochestration, in other words, it controls mutliple instances of our web server using deployments configuration files. It also has multiple instances of our redis database. They comunicate with each other using services (.yaml configuration files)
+Kubernetes are installed inside our Virtual Machine. It provides container ochestration, in other words, it controls mutliple instances of our web server using deployments configuration files. It also has multiple instances of our redis database. They comunicate with each other using services (.yaml configuration files).
+
+The configuration is as follow:
+- ```redis.yaml``` containg:
+  - 1 service: ```redis-master```
+  - 1 deployment: ```redis-master```
+  - 1 pods (replica created by the deployment)
+  - 1 persistentVolumeClaim: ```redis-data```
+- ```server.yaml```
+  - 1 service: ```server-service```
+  - 1 deployment: ```server```
+  - 3 pods (replicas created by the deployment)
 
 ### Istio
 Istio is currently a work in progress.
@@ -53,10 +64,21 @@ Istio is currently a work in progress.
 
     vagrant up
 
+  **WARNING:** The Virtual Machine can take up to 20 minutes to be fully operationnal. Please be patient while ansible finishes every tasks.
 
 
 ### Usage
-  Swagger doc available at: http://localhost:3001/api-docs
+Once the virtual machine and ansible have finished, you can try ```kubectl get all``` to see the server and redis DB running (in pods using deployments and services). You should see something like this:
+
+![kubectl get all](images/kubectl_get_all.png)
+
+If you would like to see that the server is working, you could curl doing the following:
+
+    curl http://<SERVER-SERVICE'S IP>:3000
+
+*Note: proxy for accesibility outside vagrant is currently a work in progress*
+
+Also, Swagger doc available at: http://localhost:3001/api-docs or directly from heroku deployment below.
 
 ### Testing
     npm test
@@ -77,9 +99,9 @@ Istio is currently a work in progress.
 
 ## 4. Author
 
-COLLOT Paul
-SOARES Alexandre
-PALCOUX Hector
+- COLLOT Paul
+- SOARES Alexandre
+- PALCOUX Hector
 
 ## 5. Grading
 
@@ -99,3 +121,5 @@ PALCOUX Hector
 - [Kubernetes with redis](https://stackoverflow.com/questions/53031852/how-to-deploy-a-node-js-with-redis-on-kubernetes)
 - [Ansible provisioning minikune with Vagrant](https://www.youtube.com/watch?v=xPLQqHbp9BM&feature=emb_title)
 - [Kuberneties with Redis 2](https://www.callicoder.com/deploy-multi-container-go-redis-app-kubernetes/)
+- Module 4 for web application
+- Whole ece-devops-fall modules

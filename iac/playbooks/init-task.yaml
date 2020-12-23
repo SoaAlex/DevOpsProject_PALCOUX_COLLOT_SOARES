@@ -209,7 +209,7 @@
 
     - name: Waiting for Redis server to be up
       pause:
-        minutes: 1
+        seconds: 15
 
     - name: Lauching web server from manifest file
       shell: kubectl create -f /home/k8s/server.yaml
