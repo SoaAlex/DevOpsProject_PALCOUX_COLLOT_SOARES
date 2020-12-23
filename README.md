@@ -6,10 +6,10 @@ ECE - DevOps project - SOARES Alexandre (Gr4) | COLLOT Paul (Gr2) | PALCOUX Hect
 ### Web application
 The web application is based on the module 4. We pimped it up a little bit by adding the Swagger UI. We also make every mocha tests working (you can try it yourself by launching npm test) and even added others. To launch our application, you must have started the redis server before. the app allows through an API to access user data stored in the redis server.
 
-1. We need to install dependencies : "npm install" 
-2. we can test our app with the command : "npm test"
-3. if there is an error with mocha please use "npm install mocha"
-4. And finally, you can lauch the app with "npm start"
+1. We need to install dependencies : `npm install`
+2. we can test our app with the command : `npm test`
+3. if there is an error with mocha please use : `npm install mocha`
+4. And finally, you can lauch the app with : `npm start`
 
 ### CI/CD pipeline
 We used travis pipeline for our project as a continuous integration support. The link is below.
@@ -27,7 +27,7 @@ The built image is used by kubernetes to download directly from Docker Hub the w
 ### Docker Compose
 Our Docker Compose is just like the previous Dockerfile but it also pulls a redis image from Docker Hub and links it to our webserver that he builds. Hence, the web server is fully operational
 
-Use the command : "docker-compose up"
+Use the command : `docker-compose up`
 
 ### Kubernetes
 Kubernetes are installed inside our Virtual Machine. It provides container ochestration, in other words, it controls mutliple instances of our web server using deployments configuration files. It also has multiple instances of our redis database. They comunicate with each other using services (.yaml configuration files)
