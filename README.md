@@ -85,8 +85,9 @@ If you would like to see that the server is working, you could curl doing the fo
 Also, Swagger doc available at: http://localhost:3001/api-docs or directly from heroku deployment below.
 
 ### Testing
-    npm test
-
+To run the tests :
+    `npm test`
+There are 17 unit tests which are all functional
 ## 3. Links
 
 ### Travis CI (Continuous Integration)
