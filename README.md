@@ -48,7 +48,7 @@ Istio is currently a work in progress.
 
 ### Bonus
 - more different API methods
-- integrated a documentation package
+- API documentation ussing Swagger UI
 
 ## 2. Instructions
 ### Installation
