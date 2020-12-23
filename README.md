@@ -80,7 +80,21 @@ COLLOT Paul
 SOARES Alexandre
 PALCOUX Hector
 
-## 5. Sources
+## 5. Grading
+
+| Subject                                                         |   Code    | Max. grade| Done  |
+|:----------------------------------------------------------------|:---------:|:---------:|:------|
+| Enriched web application with automated tests                   |   APP     |    +1     |  YES  |
+| Continuous Integration and Continuous Delivery (and Deployment) |   CICD    |    +3     |  YES  |
+| Containerisation with Docker                                    |   D       |    +1     |  YES  |
+| Orchestration with Docker Compose                               |   DC      |    +2     |  YES  |
+| Orchestration with Kubernetes	                                  |   KUB     |    +4     |  YES  |
+| Service mesh using Istio                                        |   IST     |    +2     |  NO   |
+| Infrastructure as code using Ansible                            |   IAC     |    +4     |  YES  |
+| Accurate project documentation in README.md file                |   DOC     |    +3     |  YES  |
+| Each bonus tasks                                                |   BNS     |    +1     |  NO   |
+
+## 6. Sources
 - [Kubernetes with redis](https://stackoverflow.com/questions/53031852/how-to-deploy-a-node-js-with-redis-on-kubernetes)
 - [Ansible provisioning minikune with Vagrant](https://www.youtube.com/watch?v=xPLQqHbp9BM&feature=emb_title)
 - [Kuberneties with Redis 2](https://www.callicoder.com/deploy-multi-container-go-redis-app-kubernetes/)
