@@ -1,11 +1,9 @@
 IMAGE_NAME = "centos/7" 
-NODE_NAME = "centos-minikube"
+NODE_NAME = "devops-project-VM"
 
 # NOTE: the installation process of Ansible and Vagrant comes from https://github.com/ginigangadharan/vagrant-iac-usecases/tree/master/virtualbox-minikube
 # However, the kubernetes deployments, pods and services are configured by ourselves with the web application
 Vagrant.configure("2") do |config|
-    #config.ssh.insert_key = false
-
     config.vm.provider "virtualbox" do |v|
         v.memory = 4096
         v.cpus = 4
@@ -19,28 +17,25 @@ Vagrant.configure("2") do |config|
     host:  3000,
     auto_correct: true
 
-    $script = "echo hello
-    cd /opt
-    sudo wget -c http://download.virtualbox.org/virtualbox/5.1.28/VBoxGuestAdditions_5.1.28.iso -O VBoxGuestAdditions_5.1.28.iso
-    sudo mount VBoxGuestAdditions_5.1.28.iso -o loop /mnt
-    sudo sh /mnt/VBoxLinuxAdditions.run"
+    config.vm.network "forwarded_port",
+    guest: 45771,
+    host:  45771,
+    auto_correct: true
 
     config.vm.define NODE_NAME do |master|     
         master.vm.box = IMAGE_NAME
-        master.vm.network "private_network", ip: "192.168.50.10"
+        master.vm.network "private_network", ip: "127.0.0.1"
         master.vm.hostname = NODE_NAME
 
         master.vm.synced_folder "../k8s/", "/home/k8s", type: "virtualbox", disabled: false
 
         master.vm.provision "ansible_local" do |ansible|
             ansible.compatibility_mode = "2.0"
-            ansible.playbook = "playbooks/install-minikube.yaml"
+            ansible.playbook = "playbooks/init-task.yaml"
             ansible.extra_vars = {
-                node_ip: "192.168.50.10",
+                node_ip: "127.0.0.1",
             }
         end
     end
-
-
 
 end

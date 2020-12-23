@@ -192,7 +192,18 @@
         mode: 0755
         owner: vagrant
         group: vagrant
+
+    - name: Install and enable kubernetes dashboard components
+      shell: kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
     
+    #- name: Create Dashboard (healthchecks from here)
+    #  shell: minikube dashboard
+    #  register: local_dashboard_addr
+
+    #- name: Local Dashboard address
+    #  debug:
+    #    msg: "{{ local_dashboard_addr }}"
+
     - name: Lauching Redis server from manifest file
       shell: kubectl create -f /home/k8s/redis.yaml
 
