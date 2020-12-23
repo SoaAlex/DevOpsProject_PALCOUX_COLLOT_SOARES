@@ -39,6 +39,7 @@ ECE - DevOps project - SOARES Alexandre (Gr4) | COLLOT Paul (Gr2) | PALCOUX Hect
 
 
 ### Usage
+  Swagger doc available at: http://localhost:3001/api-docs
 
 ### Testing
     npm test

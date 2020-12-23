@@ -1,4 +1,8 @@
 /**INIT */
+
+const swaggerJsDoc = require('swagger-jsdoc')
+const swaggerUi =require('swagger-ui-express')
+
 //express
 const express = require('express');
 const app = express();
@@ -12,6 +16,26 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json())
 
 const client = require('./redis-client');
+
+const swaggerOptions = {
+  swaggerDefinition:  {
+    info: {
+      version: "2.0.0",
+      title: "DevOps Project API",
+      description: "DevOps Project API information",
+      contact: {
+        name: "COLLOT Paul SOARES Alexandre PALCOUX Hector" 
+      },
+      servers:["http://localhost:8080"]
+    }
+  },
+  apis: ["src/routes/user.js"]
+}
+
+const swaggerDocs = swaggerJsDoc(swaggerOptions)
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
+
+
 
 //define route
 app.get('/', (req, res) => res.send('Hello World! DevOps project of Paul, Alexandre and Hector. ECE Paris'))
