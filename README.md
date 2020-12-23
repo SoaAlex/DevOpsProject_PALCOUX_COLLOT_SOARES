@@ -77,7 +77,7 @@ Istio is currently a work in progress.
 ## 4. Author
 
 COLLOT Paul
-SOARES Alexander
+SOARES Alexandre
 PALCOUX Hector
 
 ## 5. Sources
