@@ -1,8 +1,7 @@
 /**INIT */
-
+//swagger
 const swaggerJsDoc = require('swagger-jsdoc')
 const swaggerUi =require('swagger-ui-express')
-
 //express
 const express = require('express');
 const app = express();
@@ -14,6 +13,8 @@ app.use(bodyParser.urlencoded({
   extended: false
 }))
 app.use(bodyParser.json())
+//path
+const path = require('path')
 
 const client = require('./redis-client');
 
@@ -38,7 +39,8 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 
 
 //define route
-app.get('/', (req, res) => res.send('Hello World! DevOps project of Paul, Alexandre and Hector. ECE Paris'))
+app.get('/', (req, res) => res.sendFile(path.join(__dirname+'/pages/index.html')))
+//app.get('/', (req, res) => res.send('Hello World! DevOps project of Paul, Alexandre and Hector. ECE Paris'))
 app.use('/users', userRouter)
 
 const PORT = process.env.PORT || 3001;
