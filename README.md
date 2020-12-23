@@ -88,6 +88,7 @@ Also, Swagger doc available at: http://localhost:3001/api-docs or directly from 
 To run the tests :  
     `npm test`  
 There are 17 unit tests which are all functional
+
 ## 3. Links
 
 ### Travis CI (Continuous Integration)
@@ -123,6 +124,7 @@ There are 17 unit tests which are all functional
 | Each bonus tasks                                                |   BNS     |    +1     |  YES  |
 
 ### Bonus
+- different API methods
 - Swagger UI
 
 ## 6. Sources
