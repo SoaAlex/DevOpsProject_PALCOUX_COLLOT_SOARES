@@ -70,9 +70,10 @@ Istio is currently a work in progress.
 [Docker image](https://hub.docker.com/repository/docker/alsoares59/devops-project)
 
 ### Heroku (Continuous Deployment)
-**Note** Because Heroku Redis plugin requires giving credit card information, the website is not working. However, the Continuous Deployment pipeline is operationnal
 - [Dashboard (requires login)](https://dashboard.heroku.com/apps/projet-devops)
 - [App webpage](https://projet-devops.herokuapp.com/)
+- [App webpage Swagger](https://projet-devops.herokuapp.com/api-docs)
+
 
 ## 4. Author
 
