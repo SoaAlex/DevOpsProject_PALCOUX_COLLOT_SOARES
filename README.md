@@ -36,7 +36,7 @@ The configuration is as follow:
 - ```redis.yaml``` containg:
   - 1 service: ```redis-master```
   - 1 deployment: ```redis-master```
-  - 1 pods (replica created by the deployment)
+  - 1 pod (replica created by the deployment)
   - 1 persistentVolumeClaim: ```redis-data```
 - ```server.yaml```
   - 1 service: ```server-service```
@@ -45,10 +45,6 @@ The configuration is as follow:
 
 ### Istio
 Istio is currently a work in progress.
-
-### Bonus
-- more different API methods
-- API documentation ussing Swagger UI
 
 ## 2. Instructions
 ### Installation
@@ -60,7 +56,7 @@ Istio is currently a work in progress.
 
   #### 3. Install Virtual Box guest addition plugins for synchrozied folders
 
-  Note: we have been into trouble using any later version than 0.21.0 of the plugin 
+  *Note:* we have been into trouble using any later version than 0.21.0 of the plugin 
 
     vagrant plugin install vagrant-vbguest --plugin-version 0.21.0
 
@@ -68,10 +64,18 @@ Istio is currently a work in progress.
 
     vagrant up
 
-  **WARNING:** The Virtual Machine can take up to 20 minutes to be fully operationnal. Please be patient while ansible finishes every tasks.
+  **WARNING:** The Virtual Machine can take up to 40 MINUTES to be fully operationnal (we counted and do not know the reason yet... It seems like another SSH session and random commands unlocks ansible tasks). Please be patient while ansible finishes every tasks.
+  **WARNING 2:** Vagrant is configured to use 10000MB of RAM as Istio requires 8196 at least.
 
 
 ### Usage
+#### From Heroku
+Please check our Heroku App link below
+
+### From your local computer
+```npm start```
+
+#### With Vagrant VM
 Once the virtual machine and ansible have finished, you can try ```kubectl get all``` to see the server and redis DB running (in pods using deployments and services). You should see something like this:
 
 ![kubectl get all](images/kubectl_get_all.png)
@@ -85,9 +89,12 @@ If you would like to see that the server is working, you could curl doing the fo
 Also, Swagger doc available at: http://localhost:3001/api-docs or directly from heroku deployment below.
 
 ### Testing
-To run the tests :  
-    `npm test`  
-There are 17 unit tests which are all functional
+Please check our Travis CI link below.
+
+You can also do localy the following command
+```npm test```
+
+There are **17** unit tests which are all functional
 
 ## 3. Links
 

@@ -213,3 +213,32 @@
 
     - name: Lauching web server from manifest file
       shell: kubectl create -f /home/k8s/server.yaml
+
+    #- name: Download istio
+    #  get_url:
+    #    url: https://github.com/istio/istio/releases/download/1.0.6/istio-1.0.6-linux.tar.gz
+    #    dest: /var/tmp/istio-1.0.6.tar.gz
+    #    mode: '0644'
+
+    #- name: unarchive istio
+    #  unarchive:
+    #    src: /var/tmp/istio-1.0.6.tar.gz
+    #    dest: /var/lib/istio-1.0.6
+
+    #- name: Path update
+    #  shell: export PATH="$PATH:/var/tpm/istio-1.0.6/bin"
+
+    #- name: Install Istio
+    #  shell: kubectl apply -f var/tmp/istio-1.0.6/install/kubernetes/istio-demo-auth.yaml
+
+    #- name: Download istio
+    #  get_url:
+    #    url: https://istio.io/downloadIstio
+    #    dest: /var/tmp/istio
+    #    mode: '0644'
+    
+    #- name: Path update
+    #  shell: export PATH=/var/tmp/istio/bin:$PATH
+
+    #- name: install istio
+    #  shell: ansible-playbook var/tmp/istio/install/kubernetes/ansible/main.yml
