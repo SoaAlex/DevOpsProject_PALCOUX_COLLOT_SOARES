@@ -192,3 +192,13 @@
         mode: 0755
         owner: vagrant
         group: vagrant
+    
+    - name: Lauching Redis server from manifest file
+      shell: kubectl create -f /home/k8s/redis.yaml
+
+    - name: Waiting for Redis server to be up
+      pause:
+        minutes: 1
+
+    - name: Lauching web server from manifest file
+      shell: kubectl create -f /home/k8s/server.yaml

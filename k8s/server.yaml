@@ -1,0 +1,55 @@
+---
+apiVersion: apps/v1
+kind: Deployment                 
+metadata:
+  name: server             
+spec:
+  replicas: 3                   
+  selector:
+    matchLabels:
+      app: server          
+  template:                   
+    metadata:
+      labels:                 
+        app: server 
+    spec:
+      containers:
+      - name: server
+        image: alsoares59/devops-project:latest
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+          - containerPort: 3000
+        volumeMounts:
+        - name: data
+          mountPath: /data
+          readOnly: false
+        env:                    
+          - name: REDIS_URL
+            value: redis-master
+          - name: REDIS_PORT
+            value: "6379"
+          - name: PORT
+            value: "3000"
+          - name: NODE_ENV
+            value: "development"
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: redis-data
+---
+apiVersion: v1
+kind: Service                    
+metadata:
+  name: server-service    
+spec:
+  type: NodePort                 
+  ports:                      
+  - name: http
+    port: 3000
+    targetPort: 3000
+  selector:
+    app: server           

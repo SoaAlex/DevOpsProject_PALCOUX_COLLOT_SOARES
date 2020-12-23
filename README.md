@@ -6,8 +6,8 @@ ECE - DevOps project - SOARES Alexandre (Gr4) | COLLOT Paul (Gr2) | PALCOUX Hect
 ### Web application
   For the web application we used the application from the module 4
 ### CI/CD pipeline
-  We used travis pipeline for our project as a continuous integration support. The link is below
-  We used heroku as a continuous deployement service for our web application. Link is below again.
+  - We used travis pipeline for our project as a continuous integration support. The link is below.
+  - We used heroku as a continuous deployement service for our web application. Link is below again.
 ### Virtual environment using IaC approach 
   We use vagrant to configure a centOS virtual machine, along with Ansible for providing the installation of Kuberneties and Docker.
 ### Docker image
@@ -52,6 +52,10 @@ ECE - DevOps project - SOARES Alexandre (Gr4) | COLLOT Paul (Gr2) | PALCOUX Hect
 ### Docker Hub
 [Docker image](https://hub.docker.com/repository/docker/alsoares59/devops-project)
 
+### Heroku (Continuous Deployment)
+**Note** Because Keroku Redis plugin requires giving credit card information, the website is not working. However, the Continuous Deployment pipeline is operationnal
+- [Dashboard (requires login)](https://dashboard.heroku.com/apps/projet-devops)
+- [App webpage](https://projet-devops.herokuapp.com/)
 
 ## 4. Author
 
@@ -60,5 +64,6 @@ SOARES Alexander
 PALCOUX Hector
 
 ## 5. Sources
-[Kubernetes with redis](https://stackoverflow.com/questions/53031852/how-to-deploy-a-node-js-with-redis-on-kubernetes)
-[Ansible provisioning minikune with Vagrant](https://www.youtube.com/watch?v=xPLQqHbp9BM&feature=emb_title)
+- [Kubernetes with redis](https://stackoverflow.com/questions/53031852/how-to-deploy-a-node-js-with-redis-on-kubernetes)
+- [Ansible provisioning minikune with Vagrant](https://www.youtube.com/watch?v=xPLQqHbp9BM&feature=emb_title)
+- [Kuberneties with Redis 2](https://www.callicoder.com/deploy-multi-container-go-redis-app-kubernetes/)
