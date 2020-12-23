@@ -4,7 +4,12 @@ ECE - DevOps project - SOARES Alexandre (Gr4) | COLLOT Paul (Gr2) | PALCOUX Hect
 ## 1. Work performed
 
 ### Web application
-The web application is based on the module 4. We pimped it up a little bit by adding the Swagger UI. We also make every mocha tests working (you can try it yourself by launching npm test) and even added others.
+The web application is based on the module 4. We pimped it up a little bit by adding the Swagger UI. We also make every mocha tests working (you can try it yourself by launching npm test) and even added others. To launch our application, you must have started the redis server before. the app allows through an API to access user data stored in the redis server.
+
+1. We need to install dependencies : "npm install" 
+2. we can test our app with the command : "npm test"
+3. if there is an error with mocha please use "npm install mocha"
+4. And finally, you can lauch the app with "npm start"
 
 ### CI/CD pipeline
 We used travis pipeline for our project as a continuous integration support. The link is below.
@@ -21,6 +26,8 @@ The built image is used by kubernetes to download directly from Docker Hub the w
 
 ### Docker Compose
 Our Docker Compose is just like the previous Dockerfile but it also pulls a redis image from Docker Hub and links it to our webserver that he builds. Hence, the web server is fully operational
+
+Use the command : "docker-compose up"
 
 ### Kubernetes
 Kubernetes are installed inside our Virtual Machine. It provides container ochestration, in other words, it controls mutliple instances of our web server using deployments configuration files. It also has multiple instances of our redis database. They comunicate with each other using services (.yaml configuration files)
@@ -73,21 +80,7 @@ COLLOT Paul
 SOARES Alexander
 PALCOUX Hector
 
-## 5. Grading
-
-| Subject                                                         |   Code    | Max. grade| Done  |
-|:----------------------------------------------------------------|:---------:|:---------:|:------|
-| Enriched web application with automated tests                   |   APP     |    +1     |  YES  |
-| Continuous Integration and Continuous Delivery (and Deployment) |   CICD    |    +3     |  YES  |
-| Containerisation with Docker                                    |   D       |    +1     |  YES  |
-| Orchestration with Docker Compose                               |   DC      |    +2     |  YES  |
-| Orchestration with Kubernetes	                                  |   KUB     |    +4     |  YES  |
-| Service mesh using Istio                                        |   IST     |    +2     |  NO   |
-| Infrastructure as code using Ansible                            |   IAC     |    +4     |  YES  |
-| Accurate project documentation in README.md file                |   DOC     |    +3     |  YES  |
-| Each bonus tasks                                                |   BNS     |    +1     |  NO   |
-
-## 6. Sources
+## 5. Sources
 - [Kubernetes with redis](https://stackoverflow.com/questions/53031852/how-to-deploy-a-node-js-with-redis-on-kubernetes)
 - [Ansible provisioning minikune with Vagrant](https://www.youtube.com/watch?v=xPLQqHbp9BM&feature=emb_title)
 - [Kuberneties with Redis 2](https://www.callicoder.com/deploy-multi-container-go-redis-app-kubernetes/)
