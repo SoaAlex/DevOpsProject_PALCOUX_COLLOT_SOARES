@@ -85,8 +85,8 @@ If you would like to see that the server is working, you could curl doing the fo
 Also, Swagger doc available at: http://localhost:3001/api-docs or directly from heroku deployment below.
 
 ### Testing
-To run the tests :
-    `npm test`
+To run the tests :  
+    `npm test`  
 There are 17 unit tests which are all functional
 ## 3. Links
 
@@ -120,7 +120,7 @@ There are 17 unit tests which are all functional
 | Service mesh using Istio                                        |   IST     |    +2     |  NO   |
 | Infrastructure as code using Ansible                            |   IAC     |    +4     |  YES  |
 | Accurate project documentation in README.md file                |   DOC     |    +3     |  YES  |
-| Each bonus tasks                                                |   BNS     |    +1     |  YES   |
+| Each bonus tasks                                                |   BNS     |    +1     |  YES  |
 
 ### Bonus
 - Swagger UI
