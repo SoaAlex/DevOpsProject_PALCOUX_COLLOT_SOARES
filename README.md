@@ -104,7 +104,7 @@ Also, Swagger doc available at: http://localhost:3001/api-docs or directly from 
 - PALCOUX Hector
 
 ## 5. Grading
-
+### Requirements
 | Subject                                                         |   Code    | Max. grade| Done  |
 |:----------------------------------------------------------------|:---------:|:---------:|:------|
 | Enriched web application with automated tests                   |   APP     |    +1     |  YES  |
@@ -115,7 +115,10 @@ Also, Swagger doc available at: http://localhost:3001/api-docs or directly from 
 | Service mesh using Istio                                        |   IST     |    +2     |  NO   |
 | Infrastructure as code using Ansible                            |   IAC     |    +4     |  YES  |
 | Accurate project documentation in README.md file                |   DOC     |    +3     |  YES  |
-| Each bonus tasks                                                |   BNS     |    +1     |  NO   |
+| Each bonus tasks                                                |   BNS     |    +1     |  YES   |
+
+### Bonus
+- Swagger UI
 
 ## 6. Sources
 - [Kubernetes with redis](https://stackoverflow.com/questions/53031852/how-to-deploy-a-node-js-with-redis-on-kubernetes)
