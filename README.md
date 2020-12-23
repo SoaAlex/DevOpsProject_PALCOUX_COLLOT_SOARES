@@ -46,6 +46,10 @@ The configuration is as follow:
 ### Istio
 Istio is currently a work in progress.
 
+### Bonus
+- more different API methods
+- integrated a documentation package
+
 ## 2. Instructions
 ### Installation
   #### 1. Clone the repository
